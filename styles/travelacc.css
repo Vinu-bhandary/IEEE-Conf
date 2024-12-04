@@ -11,65 +11,6 @@ body {
     max-width: 100%;
 }
 
-
-/* header {
-    background-color: rgba(63, 63, 63, 0.5);
-    background-blend-mode: darken;
-    color: #242424;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.logo {
-    max-width: 70%;
-    max-height: 70%;
-    background-blend-mode: multiply;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #e55a1e;
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    transition: all 0.3s ease;
-} */
-
 header {
     top: 0px;
     position: fixed;
@@ -77,33 +18,26 @@ header {
     scroll-behavior: smooth;
     align-items: start;
     align-self: start;
+    display: flex;
+
 }
 
 #header-container {
     width: 100%;
-    /* Position the container for overlay */
     z-index: 1;
-    /* Ensure it appears above the background */
 }
 
 #header-container::before {
     content: "";
-    /* Add an empty element */
     position: absolute;
-    /* Position it over the navbar-container */
     top: 0;
     left: 0;
     width: 100%;
-    /* Cover the entire container */
     height: 100%;
-    /* Cover the entire container */
     background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black overlay */
     z-index: -10;
-    /* Place behind the content */
     opacity: 1;
     pointer-events: none;
-    /* Prevent it from blocking interactions */
 }
 
 #logo #img {
