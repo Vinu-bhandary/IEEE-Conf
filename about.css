@@ -21,17 +21,71 @@ body {
     z-index: 1; 
 }
 
-.header {
-    display: flex; 
-    align-items: center; 
-    background-color: rgba(241, 241, 241, 0.8); 
-    padding: 20px; 
-    border-radius: 8px; 
+header {
+    top:0px;
+    position: fixed;
+    margin-top: auto;
+    scroll-behavior: smooth;
+    align-items: start;
+    align-self: start;
 }
 
-.logo {
-    width: 150px; 
-    margin-right: 20px; 
+#header-container {
+    width: 100%;
+    
+    /* Position the container for overlay */
+    z-index: 1;
+    
+    /* Ensure it appears above the background */
+}
+
+#header-container::before {
+    content: "";
+    /* Add an empty element */
+    position: absolute;
+    /* Position it over the navbar-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Cover the entire container */
+    height: 100%;
+    /* Cover the entire container */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    z-index: -1;
+    /* Place behind the content */
+    opacity: 0.7;
+    pointer-events: none;
+    /* Prevent it from blocking interactions */
+}
+
+
+#logo #img {
+    height: 100px;
+    width: 220px;
+    margin: 10px 0px 10px 20px;
+}
+
+#navbar{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.items {
+    margin: 20px;
+    font-size: larger;
+    transition: font-weight 0.3s ease;
+    list-style: none;
+}
+
+.items a {
+    color: azure;
+    text-decoration: none;
+}
+
+.items:hover {
+    font-weight: bolder;
 }
 
 .title {
@@ -72,7 +126,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px;
-    background-color: rgba(241, 241, 241, 0.8); 
+    background-color: rgb(255, 255, 255); 
     border-radius: 8px; 
 }
 
