@@ -1,0 +1,119 @@
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+  background-image: url(images/hand-social-net.jpg);
+  background-size: cover; 
+  background-position: center;
+  position: relative; 
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  border: none; /* Optional: remove border */
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255); 
+  border-radius: 8px; 
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+header {
+  top:0px;
+  position: fixed;
+  margin-top: auto;
+  scroll-behavior: smooth;
+  align-items: start;
+  align-self: start;
+}
+
+#header-container {
+  width: 100%;
+  
+  /* Position the container for overlay */
+  z-index: 1;
+  
+  /* Ensure it appears above the background */
+}
+
+#header-container::before {
+  content: "";
+  /* Add an empty element */
+  position: absolute;
+  /* Position it over the navbar-container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Cover the entire container */
+  height: 100%;
+  /* Cover the entire container */
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  z-index: -1;
+  /* Place behind the content */
+  opacity: 0.7;
+  pointer-events: none;
+  /* Prevent it from blocking interactions */
+}
+
+#logo #img {
+  height: 100px;
+  width: 220px;
+  margin: 10px 0px 10px 20px;
+}
+
+#navbar{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.items {
+  margin: 20px;
+  font-size: larger;
+  transition: font-weight 0.3s ease;
+  list-style: none;
+}
+
+.items a {
+  color: azure;
+  text-decoration: none;
+}
+
+.items:hover {
+  font-weight: bolder;
+}
+
+section h1{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?technology');
+  background-size: cover;
+  background-position: center;
+  margin: 20px 110px;
+  padding: 40px ;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.hero h1 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
