@@ -52,9 +52,9 @@ header {
     /* Cover the entire container */
     background: rgba(0, 0, 0, 0.5);
     /* Semi-transparent black overlay */
-    z-index: -1;
+    z-index: -10;
     /* Place behind the content */
-    opacity: 0.7;
+    opacity: 1;
     pointer-events: none;
     /* Prevent it from blocking interactions */
 }
