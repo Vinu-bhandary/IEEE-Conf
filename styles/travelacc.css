@@ -25,6 +25,7 @@ header {
 #header-container {
     width: 100%;
     z-index: 1;
+    justify-content: space-around;
 }
 
 #header-container::before {
@@ -48,15 +49,36 @@ header {
 
 #navbar {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.items {
-    margin: 20px;
-    font-size: larger;
-    transition: font-weight 0.3s ease;
+#hamburger {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: azure;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
     list-style: none;
+    gap: 20px;
+}
+
+.menu .items {
+    margin: 0;
+}
+
+
+.items {
+    margin: 0 15px;
+    font-size: 1rem;
+    list-style: none; /* Removes bullet points */
+    transition: font-weight 0.3s ease;
 }
 
 .items a {
@@ -65,7 +87,7 @@ header {
 }
 
 .items:hover {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 section {
@@ -164,4 +186,80 @@ footer {
     color: #666;
     font-size: 0.9em;
     bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    #logo #img {
+        height: 80px; /* Adjust logo height for smaller screens */
+    }
+
+    #navbar {
+        justify-content: center; /* Center the navbar items */
+    }
+
+    .items {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+    header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: center; /* Align items to the left */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Make container wider on smaller screens */
+    }
+
+    #navbar {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    #hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .menu {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .menu .items {
+        margin: 10px 0;
+    }
+
+    .menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .items {
+        margin: 10px 0; /* Adjust margins for vertical stacking */
+    }
+
+    header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: center; /* Align items to the left */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 18px; /* Adjust h2 font size */
+    }
+
+    .items {
+        font-size: 0.9rem; /* Adjust item font size */
+    }
+
+    .title {
+        font-size: 20px; /* Adjust title font size */
+    }
 }

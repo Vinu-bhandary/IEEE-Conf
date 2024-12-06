@@ -25,6 +25,8 @@ header {
 #header-container {
     width: 100%;
     z-index: 1;
+    justify-content: space-around;
+
 }
 
 #header-container::before {
@@ -48,15 +50,36 @@ header {
 
 #navbar {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.items {
-    margin: 20px;
-    font-size: larger;
-    transition: font-weight 0.3s ease;
+#hamburger {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: azure;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
     list-style: none;
+    gap: 20px;
+}
+
+.menu .items {
+    margin: 0;
+}
+
+
+.items {
+    margin: 0 15px;
+    font-size: 1rem;
+    list-style: none; /* Removes bullet points */
+    transition: font-weight 0.3s ease;
 }
 
 .items a {
@@ -65,7 +88,7 @@ header {
 }
 
 .items:hover {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 section {
@@ -121,4 +144,88 @@ main h1 {
     text-align: center;
     color: #fff;
     margin-top: 200px;
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 10px;
+    }
+
+    #logo #img {
+        height: 70px;
+    }
+
+    .items {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .topics {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    #hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .menu {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .menu .items {
+        margin: 10px 0;
+    }
+
+    .menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+
+    .items {
+        margin: 5px 0;
+    }
+
+    .topics {
+        grid-template-columns: 1fr; /* Single column for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    main h1 {
+        margin-top: 100px;
+        font-size: 1.5rem;
+    }
 }

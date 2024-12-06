@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <title>Author Information</title>
+    <title>Author Information - IEEE Sixth ICAECC - 2025</title>
     <link rel="stylesheet" href="../styles/authorInfo.css">
 </head>
 
@@ -14,25 +14,28 @@
         <div id="logo">
             <img id="img" src="../images/reva.png">
         </div>
-        <ul id="navbar">
-            <li class="items"><a href="../index.html">Home</a></li>
-            <li class="items"><a href="./about.html">About</a></li>
-            <li class="items"><a href="">Author Information</a></li>
-            <li class="items"><a href="./program.html">Program</a></li>
-            <li class="items"><a href="./registration.html">Registration</a></li>
-            <li class="items"><a href="./travelacc.html">Travel and Accomodation</a></li>
-            <li class="items"><a href="./sponsers.html">Sponsers</a></li>
-        </ul>
+        <div id="navbar">
+            <button id="hamburger" aria-label="Toggle Menu">&#9776;</button>
+            <ul class="menu">
+                <li class="items"><a href="../index.html">Home</a></li>
+                <li class="items"><a href="./about.html">About</a></li>
+                <li class="items"><a href="">Author Information</a></li>
+                <li class="items"><a href="./program.html">Program</a></li>
+                <li class="items"><a href="./registration.html">Registration</a></li>
+                <li class="items"><a href="./travelacc.html">Travel and Accomodation</a></li>
+                <li class="items"><a href="./sponsers.html">Sponsers</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
         <h1>Author Information</h1>
+        <h2>Topics</h2>
         <div class="topics">
-            <h2>Topics</h2>
             <div class="col">
                 <h3>Electronics Engineering</h3>
                 <div>
-                    <ul>
+                    <ul class="topic-list">
                         <li>Digital Design, Analog Design, and Embedded Systems Design</li>
                         <li>Signal Processing</li>
                         <li>Biomedical Instrumentation</li>
@@ -66,7 +69,7 @@
             <div class="col">
                 <h3>Computer Engineering</h3>
                 <div>
-                    <ul>
+                    <ul class="topic-list">
                         <li>Cluster, Cloud, and Grid Computing</li>
                         <li>Heterogeneous Computing</li>
                         <li>Content Distribution Networks</li>
@@ -100,7 +103,7 @@
             <div class="col">
                 <h3>Communication Engineering</h3>
                 <div>
-                    <ul>
+                    <ul class="topic-list">
                         <li>Cognitive Radio</li>
                         <li>Delay Tolerance Networks</li>
                         <li>Communication Networks</li>
@@ -144,6 +147,7 @@
     <footer>
         © 2025 IEEE Sixth ICAECC. All rights reserved.
     </footer>
+    <script src="../script.js"></script>
 </body>
 
 </html>

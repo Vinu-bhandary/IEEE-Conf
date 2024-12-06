@@ -5,7 +5,7 @@ html, body {
 
 body {
     font-family: "Poppins", sans-serif;
-    text-align: justify;
+    text-align: center;
     margin: 0;
     padding: 0;
     background-image: url(../images/hand-social-net.jpg);
@@ -16,57 +16,62 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     position: relative;
     z-index: 1; 
 }
 
 header {
-    top:0px;
-    position: fixed;
-    margin-top: auto;
-    scroll-behavior: smooth;
-    align-items: start;
-    align-self: start;
-    display: flex;
-}
-
-#header-container {
-    width: 100%;
-    z-index: 1;
-}
-
-#header-container::before {
-    content: "";
-    position: absolute;
     top: 0;
-    left: 0;
+    position: fixed;
     width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: rgba(0, 0, 0, 0.5);
-    z-index: -10;
-    opacity: 1;
-    pointer-events: none;
+    z-index: 10;
+    padding: 10px;
 }
-
 
 #logo #img {
-    height: 100px;
-    width: 220px;
-    margin: 10px 0px 10px 20px;
+    height: 80px;
+    width: auto;
+    margin: 10px 20px;
 }
 
-#navbar{
+#navbar {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.items {
-    margin: 20px;
-    font-size: larger;
-    transition: font-weight 0.3s ease;
+
+#hamburger {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: azure;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
     list-style: none;
+    gap: 20px;
+}
+
+.menu .items {
+    margin: 0;
+}
+
+
+.items {
+    margin: 0 15px;
+    font-size: 1rem;
+    list-style: none; /* Removes bullet points */
+    transition: font-weight 0.3s ease;
 }
 
 .items a {
@@ -75,27 +80,24 @@ header {
 }
 
 .items:hover {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .title {
     flex-grow: 1; 
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin: 0; 
 }
 
 .main_img {
-    height: 100%;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .main_img img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -104,7 +106,7 @@ header {
 }
 
 .past-conf-info a {
-    color: black ;
+    color: black;
     text-decoration: none;
 }
 
@@ -113,12 +115,13 @@ header {
 }
 
 section {
-    margin: 2em;
+    margin: 2em auto;
     padding: 20px; 
     border: 1px solid #ccc;
     background: rgba(255, 255, 255, 0.9); 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px; /* Constrain width on large screens */
 }
 
 h2 {
@@ -141,7 +144,7 @@ details:hover {
 }
 
 summary {
-    font-size: 1.4em;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #333;
     cursor: pointer;
@@ -155,7 +158,7 @@ summary:hover {
 details div {
     margin-top: 10px;
     padding-left: 10px;
-    font-size: 1.1em;
+    font-size: 1rem;
     color: #555;
 }
 
@@ -169,4 +172,78 @@ footer {
     padding: 10px;
     background-color: rgb(255, 255, 255); 
     border-radius: 8px; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #logo #img {
+        height: 60px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    #navbar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .menu {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .menu .items {
+        margin: 10px 0;
+    }
+
+    .menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .items {
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+
+    section {
+        margin: 1em auto;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    #logo #img {
+        height: 50px;
+    }
+
+    .items {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 10px;
+    }
 }
