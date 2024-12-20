@@ -21,7 +21,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 body::before {
@@ -31,31 +31,18 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
-
-#header-container {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap; /* Makes the header content wrap on smaller screens */
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-#header-container::before {
-    content: "";
-    position: absolute;
+header {
     top: 0;
-    left: 0;
+    position: fixed;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -10;
-    opacity: 1;
-    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.735);
+    z-index: 10;
+    padding: 10px;
 }
 
 #logo #img {
@@ -99,7 +86,7 @@ body::before {
 }
 
 .items a {
-    color: azure;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -116,6 +103,25 @@ body::before {
     border-radius: 8px;
     padding: 2em;
     align-items: center;
+}
+.goto {
+    display: flex;
+    justify-content: space-around;
+}
+.goto a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
 }
 #title h1 {
     word-wrap: break-word; /* Ensures long words wrap to the next line */
@@ -141,6 +147,53 @@ body::before {
     word-wrap: break-word;
     width: auto;
 }
+.container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; 
+}
+.title {
+    flex-grow: 1; 
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0; 
+}
+
+.main_img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main_img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.past-conf-info p {
+    text-align: center;
+}
+
+.past-conf-info a {
+    color: rgb(255, 250, 250);
+    text-decoration: none;
+}
+
+.past-conf-info a:hover {
+    color: chocolate;
+}
+
+.info {
+    margin: 2em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?technology');
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 2em;
+    align-items: center;
+}
 
 /* Animation */
 .anim-typewriter {
@@ -163,6 +216,17 @@ body::before {
     to { border-right-color: transparent; }
 }
 
+footer {
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+    background: #f4f4f4;
+    color: #666;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
 #home-details p {
     opacity: 0;
@@ -257,7 +321,7 @@ body::before {
         position: absolute;
         top: 100%;
         right: 0;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(255, 255, 255, 0.8);
         padding: 10px;
         border-radius: 8px;
         z-index: 1000;
