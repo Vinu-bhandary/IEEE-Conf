@@ -336,6 +336,9 @@ footer {
         display: flex; /* Show menu when toggled */
     }
 
+    .goto {
+        display: grid;
+    }
 
     .items {
         margin: 5px;
