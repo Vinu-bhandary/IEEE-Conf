@@ -107,6 +107,7 @@ header {
 .goto {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .goto a {
     text-decoration: none;
