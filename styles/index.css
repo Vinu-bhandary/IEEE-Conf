@@ -178,7 +178,7 @@ table td {
 
 .past-conf-info a {
     color: rgb(255, 250, 250);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .past-conf-info a:hover {
